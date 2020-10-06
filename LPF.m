@@ -35,7 +35,7 @@ xlim([0 fs/2]);
 function f = FIR_LPF(vec_y, order, fc, fs)
 % FILTER PARAMETERS AND IMPULSE RESPONSE
     N = order;
-    fc_n = fc/(2*fs); % magnitude cutoff frequency = 50 Hz
+    fc_n = fc/(2*fs); % magnitude cutoff frequency
     h_D = zeros(1, N+1);
     for i = -N/2:1:N/2
         if i == 0
@@ -46,7 +46,7 @@ function f = FIR_LPF(vec_y, order, fc, fs)
         h_D(N/2+i+1) = h_D(N/2+i+1)*1;
     end
     h_D = h_D/sum(h_D);
-%     fvtool(h_D,1); % ¿◊’ ‘Õ◊
+%     fvtool(h_D,1); % √Ä√ó√ï √î√ç√ó
     
 % SIGNAL FILTERING
     f = zeros(1, length(vec_y));
